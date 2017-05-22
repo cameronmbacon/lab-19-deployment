@@ -1,0 +1,63 @@
+{
+  "name": "pokegram",
+  "version": "0.0.1",
+  "description": "lab 19 deplyment",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint ./",
+    "test-debug": "npm run lint && DEBUG=pokegram* mocha",
+    "build": "npm run lint && npm run test",
+    "start": "node server.js",
+    "debug": "DEBUG=pokegram* nodemon server.js",
+    "watch": "nodemon server.js",
+    "cover": "istanbul cover _mocha",
+    "test": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cameronmbacon/lab-19-deployment.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "mongodb"
+  ],
+  "author": "Cameron Bacon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cameronmbacon/lab-19-deployment/issues"
+  },
+  "homepage": "https://github.com/cameronmbacon/lab-19-deployment#readme",
+  "dependencies": {
+    "aws-sdk": "^2.54.0",
+    "bcrypt": "^1.0.2",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "crypto": "0.0.3",
+    "debug": "^2.6.8",
+    "del": "^2.2.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "http-errors": "^1.6.1",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.10.1",
+    "morgan": "^1.8.1",
+    "multer": "^1.3.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "aws-sdk-mock": "^1.7.0",
+    "chai": "^3.5.0",
+    "coveralls": "^2.13.1",
+    "eslint": "^3.19.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.1",
+    "mocha-lcov-reporter": "^1.3.0",
+    "superagent": "^3.5.2"
+  }
+}
